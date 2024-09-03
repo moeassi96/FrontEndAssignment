@@ -8,8 +8,10 @@ const MainContainer = styled("div")({
   flexDirection: "column",
   alignItems: "center",
   margin: "10px",
-  border: "1px solid",
+  border: "2px solid grey",
+  borderRadius: "5px",
   maxWidth: "200px",
+  height: "275px",
 });
 const UserCard = ({ user }) => {
   return (

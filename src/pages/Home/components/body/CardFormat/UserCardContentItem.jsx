@@ -5,13 +5,13 @@ const UserCardContentItem = ({ field, value }) => {
   return (
     <ListItem sx={{ padding: "4px" }}>
       <Grid2 container alignItems="center">
-        <Grid2 item sx={{ width: "50px" }}>
+        <Grid2 sx={{ width: "50px" }}>
           <Typography variant="body2" sx={{ fontWeight: "bold" }}>
             {field}
           </Typography>
         </Grid2>
 
-        <Grid2 item sx={{ flexGrow: 1 }}>
+        <Grid2 sx={{ flexGrow: 1 }}>
           <Tooltip title={value} arrow>
             <Typography
               sx={{

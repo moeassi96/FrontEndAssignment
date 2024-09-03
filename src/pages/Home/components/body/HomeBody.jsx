@@ -7,7 +7,7 @@ const MainContainer = styled("div")({
   boxSizing: "border-box",
   display: "flex",
   justifyContent: "center",
-  alignItems: "center",
+  alignItems: "baseline",
   width: "100%",
   minHeight: "100vh",
   padding: "20px",
@@ -16,7 +16,7 @@ const MainContainer = styled("div")({
 const HomeBody = () => {
   return (
     <MainContainer>
-      <UserList></UserList>
+      <UserList />
     </MainContainer>
   );
 };

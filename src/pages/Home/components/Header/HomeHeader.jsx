@@ -1,6 +1,6 @@
 import React from "react";
-import { styled, Typography } from "@mui/material";
-import Logo from "./shared/Logo";
+import { styled } from "@mui/material";
+import Logo from "../shared/Logo";
 
 const MainContainer = styled("div")({
   background: "rgba(0,0,0,0.8)",

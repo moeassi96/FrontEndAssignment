@@ -13,23 +13,16 @@ const UserTableImage = ({ name, avatar }) => {
   return (
     <>
       <Box
+        component="img"
         sx={{
           height: 50,
           width: 50,
+          borderRadius: "50%",
         }}
-      >
-        <Box
-          component="img"
-          sx={{
-            height: 50,
-            width: 50,
-            borderRadius: "50%",
-          }}
-          alt={`${name}'s avatar`}
-          src={imgSrc}
-          onError={handleError}
-        />
-      </Box>
+        alt={`${name}'s avatar`}
+        src={imgSrc}
+        onError={handleError}
+      />
     </>
   );
 };

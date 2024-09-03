@@ -9,6 +9,7 @@ const MainContainer = styled("div")({
   marginTop: "40px",
   padding: "10px",
   background: "rgba(0,0,0,0.2)",
+  boxSizing: "border-box",
 });
 
 const FooterCopyright = () => {

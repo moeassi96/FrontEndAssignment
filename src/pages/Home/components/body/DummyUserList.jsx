@@ -74,7 +74,7 @@ const DUMMY_USERS = [
     name: "Charlie",
     firstname: "Charlie",
     lastname: "D'Amore",
-    email: "Charlieeeeeeeeeeeee@gmail.com",
+    email: "Charlieeeeeeeeeeeddddddee@gmail.com",
     avatar:
       "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/424.jpg",
     id: "9",

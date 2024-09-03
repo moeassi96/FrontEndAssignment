@@ -59,7 +59,8 @@ const UserList = () => {
             <UserCardsList currentItems={currentItems} />
           )}
           <Pagination
-            count={Math.ceil(users.length / usersPerPage)}
+            // count={Math.ceil(users.length / usersPerPage)}
+            count={Math.ceil(DUMMY_USERS.length / usersPerPage)}
             page={currentPage}
             onChange={handlePageChange}
             variant="outlined"

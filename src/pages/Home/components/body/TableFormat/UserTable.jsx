@@ -29,7 +29,7 @@ const UserTable = ({ currentItems }) => {
                 <TableCell>{user.id}</TableCell>
                 <TableCell>{user.firstname}</TableCell>
                 <TableCell>{user.lastname}</TableCell>
-                <TableCell>{user.email}</TableCell>
+                <TableCell sx={{ width: "200px" }}>{user.email}</TableCell>
                 <TableCell>
                   <UserTableImage name={user.name} avatar={user.avatar} />
                 </TableCell>

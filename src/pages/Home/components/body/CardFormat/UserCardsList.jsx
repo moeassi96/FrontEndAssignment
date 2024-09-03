@@ -9,6 +9,7 @@ const ListContainer = styled("div")({
   gap: "20px",
   minHeight: "100vh",
   alignItems: "baseline",
+  marginTop: "20px",
 });
 
 const UserCardsList = ({ currentItems }) => {

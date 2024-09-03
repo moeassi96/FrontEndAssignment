@@ -1,38 +1,44 @@
-import { Button, styled } from "@mui/material";
+import { FormControl, InputLabel, NativeSelect, styled } from "@mui/material";
 import React from "react";
 
 const Wrapper = styled("div")({
-  marginTop: "10px",
+  marginTop: "20px",
+  marginLeft: "10px",
+  width: "150px",
 });
+
 const DisplayToggler = ({ toggleCardsView, toggleTableView, isTableView }) => {
+  const handleViewChange = (event) => {
+    const selectedView = event.target.value;
+    if (selectedView === "table") {
+      toggleTableView();
+    } else {
+      toggleCardsView();
+    }
+  };
+
   return (
     <Wrapper>
-      <Button
-        variant="contained"
-        onClick={toggleTableView}
-        sx={{
-          marginBottom: "20px",
-          borderBottomRightRadius: "0",
-          borderTopRightRadius: "0",
-          background: "black",
-        }}
-        disabled={isTableView}
-      >
-        Table View
-      </Button>
-      <Button
-        variant="contained"
-        onClick={toggleCardsView}
-        sx={{
-          marginBottom: "20px",
-          background: "black",
-          borderBottomLeftRadius: "0",
-          borderTopLeftRadius: "0",
-        }}
-        disabled={!isTableView}
-      >
-        Card View
-      </Button>
+      <FormControl fullWidth>
+        <InputLabel variant="standard" htmlFor="uncontrolled-native">
+          View
+        </InputLabel>
+        <NativeSelect
+          value={isTableView ? "table" : "cards"}
+          onChange={handleViewChange}
+          inputProps={{
+            name: "view",
+            id: "uncontrolled-native",
+          }}
+        >
+          <option style={{ textAlign: "center" }} value={"table"}>
+            Table View
+          </option>
+          <option style={{ textAlign: "center" }} value={"cards"}>
+            Cards View
+          </option>
+        </NativeSelect>
+      </FormControl>
     </Wrapper>
   );
 };

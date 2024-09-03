@@ -11,11 +11,7 @@ const MainContainer = styled("div")({ width: "100%", minHeight: "100vh" });
 
 const UserList = () => {
   const dispatch = useDispatch();
-  const users = useSelector((state) => state.user.users);
-  const loading = useSelector((state) => state.user.loading);
-  const error = useSelector((state) => state.user.error);
-  const currentPage = useSelector((state) => state.user.currentPage);
-  const usersPerPage = useSelector((state) => state.user.usersPerPage);
+  const usersState = useSelector((state) => state.user);
 
   const [isTableView, setIsTableView] = useState(true);
 
@@ -30,27 +26,36 @@ const UserList = () => {
     dispatch(fetchUsers());
   }, [dispatch]);
 
-  const indexOfLastItem = currentPage * usersPerPage;
-  const indexOfFirstItem = indexOfLastItem - usersPerPage;
+  const indexOfLastItem = usersState.currentPage * usersState.usersPerPage;
+  const indexOfFirstItem = indexOfLastItem - usersState.usersPerPage;
 
   const currentItems = DUMMY_USERS.slice(indexOfFirstItem, indexOfLastItem);
-  // const currentItems = users.slice(indexOfFirstItem, indexOfLastItem);
+  // const currentItems = userState.users.slice(indexOfFirstItem, indexOfLastItem);
 
   const handlePageChange = (_, page) => {
     dispatch(setPage(page));
   };
   return (
     <MainContainer>
-      <Typography variant="h4">Users</Typography>
+      <Typography
+        variant="h4"
+        marginLeft="10px"
+        fontWeight={600}
+        color="var(--primary-color)"
+      >
+        Users
+      </Typography>
       <DisplayToggler
         toggleCardsView={toggleCardsView}
         toggleTableView={toggleTableView}
         isTableView={isTableView}
       />
-      {loading ? (
-        <Typography variant="h4">Loading ...</Typography>
-      ) : error ? (
-        <p>Error: {error}</p>
+      {usersState.loading ? (
+        <Typography variant="h4" sx={{ marginLeft: "10px" }}>
+          Loading ...
+        </Typography>
+      ) : usersState.error ? (
+        <p>Error: {usersState.error}</p>
       ) : (
         <>
           {isTableView ? (
@@ -60,8 +65,8 @@ const UserList = () => {
           )}
           <Pagination
             // count={Math.ceil(users.length / usersPerPage)}
-            count={Math.ceil(DUMMY_USERS.length / usersPerPage)}
-            page={currentPage}
+            count={Math.ceil(DUMMY_USERS.length / usersState.usersPerPage)}
+            page={usersState.currentPage}
             onChange={handlePageChange}
             variant="outlined"
             shape="rounded"

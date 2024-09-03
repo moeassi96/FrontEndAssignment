@@ -16,11 +16,21 @@ const UserTable = ({ currentItems }) => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>ID</TableCell>
-              <TableCell>First Name</TableCell>
-              <TableCell>Last Name</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell>Avatar</TableCell>
+              <TableCell sx={{ fontWeight: "bold", fontSize: "16px" }}>
+                ID
+              </TableCell>
+              <TableCell sx={{ fontWeight: "bold", fontSize: "16px" }}>
+                First Name
+              </TableCell>
+              <TableCell sx={{ fontWeight: "bold", fontSize: "16px" }}>
+                Last Name
+              </TableCell>
+              <TableCell sx={{ fontWeight: "bold", fontSize: "16px" }}>
+                Email
+              </TableCell>
+              <TableCell sx={{ fontWeight: "bold", fontSize: "16px" }}>
+                Avatar
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -29,7 +39,7 @@ const UserTable = ({ currentItems }) => {
                 <TableCell>{user.id}</TableCell>
                 <TableCell>{user.firstname}</TableCell>
                 <TableCell>{user.lastname}</TableCell>
-                <TableCell sx={{ width: "200px" }}>{user.email}</TableCell>
+                <TableCell sx={{ width: "400px" }}>{user.email}</TableCell>
                 <TableCell>
                   <UserTableImage name={user.name} avatar={user.avatar} />
                 </TableCell>

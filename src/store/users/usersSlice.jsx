@@ -1,6 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const initialState = {
+  users: [],
+  loading: false,
+  error: null,
+  currentPage: 1,
+  usersPerPage: 10,
+};
+
 export const fetchUsers = createAsyncThunk(
   "users/fetchUsers",
   async (_, { rejectWithValue }) => {
@@ -16,13 +24,7 @@ export const fetchUsers = createAsyncThunk(
 );
 const userSlice = createSlice({
   name: "users",
-  initialState: {
-    users: [],
-    loading: false,
-    error: null,
-    currentPage: 1,
-    usersPerPage: 10,
-  },
+  initialState,
   reducers: {
     setPage(state, action) {
       state.currentPage = action.payload;
